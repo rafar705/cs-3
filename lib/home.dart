@@ -34,111 +34,140 @@ class _HomeState extends State<Home > {
       ),
       body: SafeArea (
         child: SingleChildScrollView(
-        child:Padding(padding: EdgeInsets .all( 16),
-          child :Column(
-            children: [
-              buildRow(),
-              NewWidget2(),
-              buildRow1(),
-        ],
+          child:Padding(padding: EdgeInsets .all( 16),
+            child :Column(
+              children: [
+                buildRow(),
+                NewWidget2(),
+                NewWidget3(),
+              ],
+            ),
+          ),
         ),
       ),
-      ),
-    ),
     );
   }
 
-  Row buildRow1() {
-    return buildRow4();
+  NewWidget7 buildRow() {
+    return
+      NewWidget7();
   }
+}
 
-  Row buildRow4() {
+class NewWidget7 extends StatelessWidget {
+  const NewWidget7({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
-            children: [
-              Column(
-                children: [
-                  Container(
-                    color: Colors.brown,
-                    height: 40,
-                    width: 40,
-                  ),
-                  NewWidget1(),
-                  Container(
-                    color: Colors.blue,
-                    height: 40,
-                    width: 40,
-                  ),
-                  NewWidget(),
-                  Container(
-                    color: Colors.green,
-                    height: 40,
-                    width: 40,
-                  ),
-                  Divider(),
-                  buildRow3(),
-                  Divider() ,
-                  Text('RAFAT Ali'),
-                ],
-              ),
-            ],
-          );
-  }
+    children: [
+      Container(
+        color: Colors.black,
+        height: 40,
+        width: 40,
+      ),
 
-  Row buildRow3() {
+      Padding(padding:  EdgeInsets .all( 16)),
+      Expanded(child:  Container(),),
+      Padding(padding:  EdgeInsets .all( 16)),
+      Container(
+        color: Colors.yellow,
+        height: 40,
+        width: 40,
+      ),
+      buildContainer(40, 180, Colors.blue,)
+    ],
+
+        );
+  }
+}
+
+class NewWidget3 extends StatelessWidget {
+  const NewWidget3({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return NewWidget6();
+  }
+}
+
+class NewWidget6 extends StatelessWidget {
+  const NewWidget6({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.purple,
-                      radius: 100,
-                      child: Stack(
-                        children: [
-                          Container(
-                        color: Colors.yellowAccent,
-                        height: 40,
-                        width: 40,),
-                        Container(
-                          color: Colors.blueGrey,
-                          height: 60,
-                          width: 60,),
-                        Container(
-                          color: Colors.red ,
-                          height: 100,
-                          width: 100,),
-
-
-
-
-                        ],
-                      ),
-                      ),
-                    ],
-                  );
+      children: [
+        Column(
+          children: [
+            Container(
+              color: Colors.brown,
+              height: 40,
+              width: 40,
+            ),
+            NewWidget1(),
+            Container(
+              color: Colors.blue,
+              height: 40,
+              width: 40,
+            ),
+            NewWidget(),
+            Container(
+              color: Colors.green,
+              height: 40,
+              width: 40,
+            ),
+            Divider(),
+            NewWidget5(),
+            Divider() ,
+            Text('RAFAT Ali'),
+          ],
+        ),
+      ],
+    );
   }
+}
 
-  Row buildRow() {
-    return buildRow2();
-  }
+class NewWidget5 extends StatelessWidget {
+  const NewWidget5({
+    super.key,
+  });
 
-  Row buildRow2() {
+  @override
+  Widget build(BuildContext context) {
     return Row(
+      children: [
+        CircleAvatar(
+          backgroundColor: Colors.purple,
+          radius: 100,
+          child: Stack(
             children: [
               Container(
-                color: Colors.black,
+                color: Colors.yellowAccent,
                 height: 40,
-                width: 40,
-              ),
-
-              Padding(padding:  EdgeInsets .all( 16)),
-              Expanded(child:  Container(),),
-              Padding(padding:  EdgeInsets .all( 16)),
+                width: 40,),
               Container(
-                color: Colors.yellow,
-                height: 40,
-                width: 40,
-              ),
-              buildContainer(40, 180, Colors.blue,)
-            ],
+                color: Colors.blueGrey,
+                height: 60,
+                width: 60,),
+              Container(
+                color: Colors.red ,
+                height: 100,
+                width: 100,),
 
+
+
+
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -179,5 +208,6 @@ Container buildContainer(double x,double y,Color c){
   return Container(
     color: c,
     height: x,
-  width: y,);
+    width: y,);
 }
+
